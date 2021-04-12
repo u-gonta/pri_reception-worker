@@ -8,9 +8,9 @@ using System.Windows;
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("ReceptionWorker")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("ネットワーク経由で受け取った文字列をファイル出力する")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("天竜精機 株式会社")]
 [assembly: AssemblyProduct("ReceptionWorker")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
