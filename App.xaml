@@ -1,8 +1,7 @@
 ﻿<Application x:Class="ReceptionWorker.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ReceptionWorker"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:ReceptionWorker">
     <Application.Resources>
          
     </Application.Resources>

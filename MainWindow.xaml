@@ -5,8 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReceptionWorker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{Binding Source={x:Static local:ResourceService.Current}, Path=Resources.Setting, Mode=OneWay}" Height="350" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="ToolWindow" Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <GroupBox x:Name="groupBoxCommunication" Header="{Binding Source={x:Static local:ResourceService.Current}, Path=Resources.Communication, Mode=OneWay}" Grid.ColumnSpan="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="14*"/>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="423*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <local:SettingCommunication x:Name="SettingCommunication01" Grid.ColumnSpan="4"/>
+                <local:SettingCommunication x:Name="SettingCommunication02" Grid.ColumnSpan="4" Grid.Row="1"/>
+                <local:SettingCommunication x:Name="SettingCommunication03" Grid.ColumnSpan="4" Grid.Row="2"/>
+                <local:SettingCommunication x:Name="SettingCommunication04" Grid.ColumnSpan="4" Grid.Row="3"/>
+                <local:SettingCommunication x:Name="SettingCommunication05" Grid.ColumnSpan="4" Grid.Row="4"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBoxOutput" Header="{Binding Source={x:Static local:ResourceService.Current}, Path=Resources.Save, Mode=OneWay}" Grid.ColumnSpan="10" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="{Binding Source={x:Static local:ResourceService.Current}, Path=Resources.SaveDirectory, Mode=OneWay}" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox x:Name="textBoxOutputDirectory" Grid.ColumnSpan="9" Grid.Column="2" TextWrapping="Wrap" Text="..\Log" VerticalAlignment="Center"/>
+                <Label Content="{Binding Source={x:Static local:ResourceService.Current}, Path=Resources.RententionDays, Mode=OneWay}" Grid.ColumnSpan="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox x:Name="textBoxOutputRetentionDays" Grid.Column="3" TextWrapping="Wrap" Text="14" VerticalAlignment="Center" Grid.Row="1" TextAlignment="Right"/>
+                <Label Content="{Binding Source={x:Static local:ResourceService.Current}, Path=Resources.BufferSize, Mode=OneWay}" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBox x:Name="textBoxOutputBufferSize" Grid.Column="7" TextWrapping="Wrap" Text="100" VerticalAlignment="Center" Grid.Row="1" TextAlignment="Right"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="buttonOk" Content="{Binding Source={x:Static local:ResourceService.Current}, Path=Resources.Update, Mode=OneWay}" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Click="ButtonOk_Click" Margin="0,5"/>
+        <Button x:Name="buttonClose" Content="{Binding Source={x:Static local:ResourceService.Current}, Path=Resources.Close, Mode=OneWay}" Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="2" Click="ButtonClose_Click" Margin="0,5"/>
     </Grid>
 </Window>
